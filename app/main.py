@@ -27,12 +27,14 @@ class Animal:
     def hidden(self) -> bool:
         return self.__hidden
 
+
 class Herbivore(Animal):
     def hide(self) -> None:
         self._toggle_hidden()
 
+
 class Carnivore(Animal):
-    def bite(self, target) -> None:
+    def bite(self, target: Herbivore) -> None:
         if not isinstance(target, Herbivore):
             return
         if target.hidden:
